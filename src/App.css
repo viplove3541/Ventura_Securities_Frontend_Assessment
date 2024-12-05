@@ -1,38 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Sora:wght@100..800&display=swap');
+
 .App {
+  font-family: "Sora", sans-serif;
+  width: 70%;
+  margin: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .App {
+    width: 90%;
+  }
+}
+
+
+/* IPO LISTING CSS */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #e0e0e0; /* Light border around the table */
+}
+
+th, td {
+  padding: 12px 9px; /* Slightly increased padding for better readability */
+  text-align: left;
+  border-bottom: 1px solid #ddd; /* Subtle border between rows */
+}
+
+th {
+  background-color: #f4f4f4; /* Lighter background for header */
+  color: #333; /* Darker text color for better contrast */
+  font-weight: 600; /* Slightly bolder text */
+  text-transform: uppercase; /* Optional: Makes header text uppercase */
+}
+
+td {
+  color: #555; /* Slightly darker text for table cells */
+}
+
+tr:hover {
+  background-color: #fafafa; /* Light hover effect */
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9; /* Slight alternate row coloring */
+}
+
+tr:nth-child(odd) {
+  background-color: #ffffff; /* White background for odd rows */
+}
+
+.issueDate {
+  display: flex;
+}
+
+.issueDate img {
+  height: 30px;
+  width: 30px;
+  border: 1px solid #ededed;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.primaryText {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  color: black;
+}
+
+.centerText,
+.label {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.secondaryText {
+  margin: 0;
+  font-size: 12px;
+  color: #767676;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.ipo-details {
+  padding: 15px;
+  border: 1px solid #dddddd;
+  border-radius: 18px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.detail {
+  padding: 15px;
+  border: 1px solid #dddddd;
+  border-radius: 13px;
+}
+
+.wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.progress-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 87%;
+  max-width: 900px;
+  margin-bottom: 16px;
+}
+
+.progress-line {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: #28a745;
+  z-index: 1;
+}
+
+.step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  background-color: #d0d0d0;
+  border-radius: 50%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  font-size: 18px;
   color: white;
+  font-weight: bold;
+  margin-bottom: 8px;
 }
 
-.App-link {
-  color: #61dafb;
+.step.completed .circle {
+  background-color: #28a745;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.labels-container {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 900px;
+}
+
+.label span {
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  color: #333;
+}
+
+.details-header {
+  margin: 20px 0;
+}
+
+.breadcrumb {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.breadcrumb p {
+  margin: 0;
+  margin-right: 10px;
+}
+
+.breadcrumb-link {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #767676;
+}
+
+.details-header_elements {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.elements-border {
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  padding: 7px 13px;
+  margin-right: 20px;
+}
+
+.apply-btn {
+  background-color: #291660;
+  border: none;
+  border-radius: 13px;
+  color: white;
+  padding: 15px 32px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .primaryText {
+      font-size: 11px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .secondaryText {
+      font-size: 8px;
+  }
+
+  .wrapper {
+      flex-direction: row;
+      align-items: start;
+      margin-left: 20px;
+  }
+
+  .progress-container {
+      flex-direction: column;
+      width: 10%;
+  }
+
+  .labels-container {
+      flex-direction: column;
+      width: auto;
+      margin-top: 7px;
+      padding-left: 20px;
+      justify-content: flex-start;
+  }
+
+  .progress-line {
+      top: 10px;
+      left: 13px;
+      height: 83%;
+      width: 4px;
+  }
+
+  .step {
+      margin-bottom: 30px;
+  }
+
+  .label {
+      text-align: start;
+      margin-bottom: 51px;
+
   }
 }
+
